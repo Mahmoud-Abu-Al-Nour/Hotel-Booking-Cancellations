@@ -27,7 +27,7 @@ The dataset contains hotel booking information including:
 * Number of Nights
 * Repeated Guest Status
 
-Target Variable:
+### Target Variable
 
 * Booking Status (Cancelled / Not Cancelled)
 
@@ -39,9 +39,8 @@ Target Variable:
 * Pandas
 * NumPy
 * Matplotlib
-* Seaborn
 * Scikit-Learn
-* XGBoost
+* Gradient Boosting Classifier
 * Streamlit
 * Joblib
 * Git & GitHub
@@ -68,8 +67,11 @@ Hotel-Booking-Cancellations/
 │
 ├── outputs/
 │   ├── figures/
-        ├── monthly_booking_trend.png
-        └── streamlit_app.png
+│   │   ├── monthly_booking_trend.png
+│   │   ├── feature_importance.png
+│   │   ├── confusion_matrix.png
+│   │   └── streamlit_app.png
+│   │
 │   └── reports/
 │
 ├── src/
@@ -102,59 +104,91 @@ Hotel-Booking-Cancellations/
 
 ---
 
-## Model Performance
+## Evaluation Metrics
 
-Final Model Accuracy:
+| Metric    | Score  |
+| --------- | ------ |
+| Accuracy  | 81.87% |
+| Precision | 84.67% |
+| Recall    | 91.29% |
+| F1 Score  | 87.86% |
 
-```text
-0.8224
-```
+The model achieved strong classification performance, particularly in identifying booking cancellations with a Recall greater than 91%.
 
 ---
+
+## Key Insights
+
+* Lead Time is the most important factor affecting booking cancellations.
+* Average Price Per Room has a strong influence on cancellation behavior.
+* Customers with more special requests are less likely to cancel bookings.
+* Total Guests and Repeated Guest status have limited predictive power.
+
+---
+
 ## Exploratory Data Analysis
 
 ### Monthly Booking Trend
 
-![Monthly Booking Trend](outputs/figures/montly booking trand.png)
+![Monthly Booking Trend](outputs/figures/monthly_booking_trend.png)
+
+The analysis shows seasonal booking behavior, with booking activity peaking during several months of the year and cancellation patterns varying across seasons.
+
+---
+
+## Feature Importance
+
+![Feature Importance](outputs/figures/feature_importance.png)
+
+The trained Gradient Boosting model identified the following features as the most influential:
+
+1. Lead Time
+2. Average Price Per Room
+3. Number of Special Requests
+
+These features contributed most to predicting whether a booking would be cancelled.
+
+---
+
+## Confusion Matrix
+
+![Confusion Matrix](outputs/figures/confusion_matrix.png)
+
+The confusion matrix provides a detailed view of model predictions and classification performance.
 
 ---
 
 ## Application Preview
-![Streamlit App](outputs/figures/streamlit_app.png)
 
-![Streamlit App](outputs/figures/monthly_booking_trend.png.png)
-
-### Streamlit Application
+### Streamlit Web Application
 
 ![Streamlit App](outputs/figures/streamlit_app.png)
 
-### Exploratory Data Analysis
-
-![EDA](outputs/figures/correlation_heatmap.png)
+The application allows users to enter booking information and receive real-time cancellation predictions using the trained machine learning model.
 
 ---
 
 ## Installation
 
-Clone repository:
+### Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Mahmoud-Abu-Al-Nour/Hotel-Booking-Cancellations.git
 ```
 
-Create virtual environment:
+### Create Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-Activate environment:
+### Activate Virtual Environment
 
 ```bash
 .venv\Scripts\activate
 ```
 
-Install dependencies:
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -182,4 +216,4 @@ streamlit run app/app.py
 
 Mahmoud Abu Al Nour
 
-Computer Science Student
+Computer Science Student | Data Science & Machine Learning Enthusiast
