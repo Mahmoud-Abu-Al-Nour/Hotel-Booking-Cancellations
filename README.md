@@ -122,7 +122,7 @@ Final Model Accuracy:
 ## Application Preview
 ![Streamlit App](outputs/figures/streamlit_app.png)
 
-![Streamlit App](outputs/figures/montly booking trand copy.png)
+![Streamlit App](outputs/figures/monthly_booking_trend.png.png)
 
 ### Streamlit Application
 
